@@ -15,7 +15,7 @@ import com.example.quotes.R
 import com.example.quotes.models.quoteDataClassItem
 
 @Composable
-fun QuoteListMainScreen(data:Array<quoteDataClassItem>,onclick:()->Unit) {
+fun QuoteListMainScreen(data:Array<quoteDataClassItem>,onclick:(quote:quoteDataClassItem)->Unit) {
     Column() {
         Text(
             text = "Our Quotes",
@@ -28,8 +28,6 @@ fun QuoteListMainScreen(data:Array<quoteDataClassItem>,onclick:()->Unit) {
                 .padding(8.dp, 24.dp)
                 .fillMaxWidth(1f)
         )
-        QuoteList(data = data ) {
-            onclick
-        }
+        QuoteList(data = data,onclick )
     }
 }

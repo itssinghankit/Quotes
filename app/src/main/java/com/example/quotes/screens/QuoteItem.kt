@@ -34,13 +34,13 @@ import com.example.quotes.R
 import com.example.quotes.models.quoteDataClassItem
 
 @Composable
-fun QuoteItem(quote:quoteDataClassItem, onclick: ()->Unit) {
+fun QuoteItem(quote:quoteDataClassItem, onclick: (quote:quoteDataClassItem)->Unit) {
 
     Card(
         elevation = CardDefaults.cardElevation(4.dp),
         colors = CardDefaults.cardColors(Color.White),
         modifier = Modifier
-            .clickable { onclick }
+            .clickable { onclick(quote) }
             .padding(8.dp)
             .fillMaxWidth(1f)
     ) {
